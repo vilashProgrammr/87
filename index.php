@@ -5,7 +5,16 @@ include_once 'dbconfig.php';
 if(isset($_GET['delete_id']))
 {
 	//delete logic here
-	
+	//changes by dj+4@programmr.com
+	$id = $_GET['delete_id'];
+	if(empty($id)){
+		//empty 
+		header("Location: $_SERVER[PHP_SELF]");
+	}
+	$sql_query="DELETE FROM users WHERE user_id=".$id;
+	mysql_query($sql_query);
+	//redirect to the page to refresh the entries
+	header("Location: $_SERVER[PHP_SELF]");
 }
 // delete condition
 
@@ -38,7 +47,7 @@ function delete_id(id)
 
 <div id="header">
 	<div id="content">
-    <label>CRUD Operations With PHP and MySql - <a href="http://www.codingcage.com" target="_blank">By Coding Cage</a></label>
+    <label>CRUD Operations<a href="http://www.codingcage.com" target="_blank">By Coding Cage</a></label>
     </div>
 </div>
 
