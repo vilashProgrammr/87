@@ -1,11 +1,11 @@
 <?php
 include_once 'dbconfig.php';
 
-// delete condition
 if(isset($_GET['delete_id']))
 {
 	//delete logic here
-	
+	//dj+3@programmr.com incomplete solution code
+	$sql_query="SELECT * FROM users";
 }
 // delete condition
 
@@ -28,7 +28,7 @@ function delete_id(id)
 {
 	if(confirm('Sure to Delete ?'))
 	{
-		window.location.href='index.php?delete_id='+id;
+		window.location.href='index.php2?delete_id='+id;
 	}
 }
 </script>
@@ -51,7 +51,7 @@ function delete_id(id)
     <th>First Name</th>
     <th>Last Name</th>
     <th>City Name</th>
-    <th colspan="2">Operations</th>
+    <th colspan="2">OPS</th>
     </tr>
     <?php
 	$sql_query="SELECT * FROM users";
